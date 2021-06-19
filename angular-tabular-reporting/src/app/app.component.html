@@ -1,0 +1,21 @@
+<ag-grid-angular
+
+style="width: 100%; height: 660px"
+class = "ag-theme-balham-dark"
+
+[gridOptions]="gridOptions"
+rowSelection = multiple
+
+(onFirstDataRendered) = "onFirstDataRendered"
+(gridReady)="onGridReady($event)"
+
+[statusBar]="statusBar"
+[enableRangeSelection]="true"
+[sideBar]="true"
+[tooltipShowDelay]="tooltipShowDelay"
+[sideBar]="sideBar"
+[enableCharts]="true"
+
+></ag-grid-angular>
+<div id="myChart" class="ag-theme-alpine my-chart"></div>
+

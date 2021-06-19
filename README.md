@@ -1,27 +1,92 @@
-# AngularTabularReporting
+# `ANGULAR` `AG-GRID` : Tabular Reporting (CSV to HTML)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
+## library : <https://www.ag-grid.com/>
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Approach
 
-## Code scaffolding
+* A static standalone angular project
+* Java for
+  * Injecting `csv` data in `main*.js` file
+  * Injecting `css` to highlight `FAILED:` columns in `style*.css`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Out-of-box mostly used features of ag-grid
 
-## Build
+* Supports `huge number of rows` for viewing 
+* tested upto 100K rows without screen lag
+* `Pivot Creation` 
+* `Charts` e.g. Column, Bar, Pie, Histogram, etc.
+* `Group By`, `Sorting`, `Filtering` of columns
+* `Export` as csv or .xml
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+#### Execution
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> `gson-2.8.7.jar` should be present @ `java-jars/` path
 
-## Running end-to-end tests
+```sh
+javac -cp ".;java-jars/*" DataService.java
+java -cp ".;java-jars/*" DataService
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+### Outputs
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* `data.csv` is parsed for viewing
+* `out/reports/index.html` = final reports
+* `columns_to_hide_on_1st_load.txt` contains columns t hide on first load
+
+---
+
+#### Set Up [ for `localhost`]
+
+```sh
+1. install node.js @ https://nodejs.org/en/download/
+
+2. npm install -g @angular/cli
+
+3. npm install 
+# in certain circumstances npm will perform an "auto prune". 
+# This step ensures all expected dependencies are | present
+
+4. ng new app
+
+5. cd app
+
+6. npm install --save ag-grid-community ag-grid-angular ag-grid-enterprise
+
+# perform ag-grid changes form documentation
+
+7. ng serve
+```
+
+---
+
+> standalone app : `ng build --prod --base-href ./`
+
+---
+
+## angular clean install
+
+```sh
+ng --version
+
+npm uninstall -g @angular/cli
+
+npm cache clean --force
+
+npm install -g @angular/cli@~11.2.9
+or
+npm install -g @angular/cli
+
+ng --version
+```
+
+---
+
+![Image of Yaktocat](out/screenshot.jpg)
+
+---

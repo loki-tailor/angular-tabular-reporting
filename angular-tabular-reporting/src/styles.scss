@@ -1,0 +1,22 @@
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+@import "~ag-grid-community/dist/styles/ag-theme-alpine-dark.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham-dark.css";
+
+.ag-header-cell-filtered {
+  background-color: #1b6d85 !important;
+  color: #fff !important;
+}
+
+.ag-header-cell-filtered span {
+  color: #fff !important;
+}
+
+.ag-row-hover {
+  /* putting in !important so it overrides the theme's styling as it hovers the row also */
+  background-color: #82828235 !important;
+}
+
+.ag-column-hover {
+  background-color: #82828235;
+}
